@@ -23,15 +23,25 @@ def find_min_max(float_list):
 def sort_temperature():
     print("sort_temperature")
 
-def calc_median_temperature():
-    print("calc_median_temperature")
+def calc_median_temperature(float_list):
+    sorted_list = sorted(float_list)
 
+    if len(sorted_list) % 2 == 0:
+        mid = len(sorted_list) // 2
+        median = (sorted_list[mid - 1] + sorted_list[mid]) / 2
+    else:
+        mid = len(sorted_list) // 2
+        median = sorted_list[mid]
+
+    return median
 
 
 display_main_menu()
 x = get_user_input()
-min,max= find_min_max(x)
-average=calc_average(x)
+min , max = find_min_max(x)
+average = calc_average(x)
+median = calc_median_temperature(x)
 print("Min value = " + str(min))
 print("Max value = " + str(max))
 print("Average = " + str(average))
+print("Median = " + str(median))
