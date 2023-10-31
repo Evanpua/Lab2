@@ -26,16 +26,22 @@ def sort_temperature():
     print("sort_temperature")
 
 def calc_median_temperature(float_list):
-   print("Median =" + str(statistics.median(float_list)))
+    j=statistics.median(float_list)
+    print("Median =" + str(j))
+    return j
 
 
+def main():
+    display_main_menu()
+    x = get_user_input()
+    min , max = find_min_max(x)
+    average = calc_average(x)
+    print("Min value = " + str(min))
+    print("Max value = " + str(max))
+    print("Average = " + str(average))
+    print("Lab2")
+    calc_median_temperature(x)
 
-display_main_menu()
-x = get_user_input()
-min , max = find_min_max(x)
-average = calc_average(x)
-print("Min value = " + str(min))
-print("Max value = " + str(max))
-print("Average = " + str(average))
-print("Lab2")
-calc_median_temperature(x)
+
+if __name__ == "__main__":
+    main()
